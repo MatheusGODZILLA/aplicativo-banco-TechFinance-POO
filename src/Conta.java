@@ -19,4 +19,17 @@ public class Conta {
 
     public Conta(double saldoInicial, String numeroConta2, Cliente cliente2) {
     }
+
+    // Método para realizar saques
+    public void saque(double valor) {
+        if (valor > saldo) {
+            System.out.println("Saldo insuficiente para o saque.");
+        } else {
+            saldo -= valor;
+            String descricaoTransacao = "Saque: R$" + valor;
+            registrarTransacao(descricaoTransacao);
+            System.out.println("Saque de " + valor + " realizado com sucesso.");
+            System.out.println("\n");
+        }
+    }
 }
