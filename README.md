@@ -3,4 +3,4 @@ Disciplina: Programação Orientada a Objetos - Curso Superior de Análise e Des
 - Professor: Jesiel Viana
 - Aluno: Matheus da Silva
 
-Objetivo: usar conceitos de POO para implementar uma solução para este estudo de caso usando as linguagens Java e TypeScript.
+Objetivo: usar conceitos de POO para implementar uma solução para este estudo de caso usando as linguagens Java.
