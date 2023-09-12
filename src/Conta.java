@@ -65,4 +65,14 @@ public class Conta {
         System.out.println("Número da Conta: " + numeroConta + "\nSaldo: R$" + saldo);
         System.out.println("\n");
     }
+
+    // Método para registrar uma transação no histórico
+    public void registrarTransacao(String transacao) {
+        historicoTransacoes.add(transacao);
+    }
+
+    // Método para obter o histórico de transações
+    public List<String> getHistoricoTransacoes() {
+        return historicoTransacoes;
+    }
 }
