@@ -32,4 +32,13 @@ public class Conta {
             System.out.println("\n");
         }
     }
+
+    // Método para realizar depósitos
+    public void deposito(double valor) {
+        saldo += valor;
+        String descricaoTransacao = "Depósito: R$" + valor;
+        registrarTransacao(descricaoTransacao);
+        System.out.println("Depósito de " + valor + " realizado com sucesso.");
+        System.out.println("\n");
+    }
 }
