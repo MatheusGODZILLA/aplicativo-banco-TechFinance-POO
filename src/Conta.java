@@ -41,4 +41,22 @@ public class Conta {
         System.out.println("Depósito de " + valor + " realizado com sucesso.");
         System.out.println("\n");
     }
+
+    // Método para realizar transferências
+    public void transferencia(Conta destino, double transferencia) {
+        if (transferencia > saldo) {
+            System.out.println("Saldo insuficiente para a transferência.");
+            System.out.println("\n");
+        } else {
+            saldo -= transferencia;
+            destino.deposito(transferencia);
+    
+            // Registra a transação no histórico
+            String descricaoTransacao = "Transferência para a conta " + destino.numeroConta + ": R$" + transferencia;
+            registrarTransacao(descricaoTransacao);
+    
+            System.out.println("Transferência de " + transferencia + " realizada com sucesso para o destinatário.");
+            System.out.println("\n");
+        }
+    }
 }
