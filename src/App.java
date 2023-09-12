@@ -19,5 +19,16 @@ public class App {
         scanner.nextLine(); // Limpar a linha em branco
         System.out.print("Email: ");
         String email = scanner.nextLine();
+
+        // Cria um cliente com informações iniciais e uma conta bancária
+        Cliente cliente = new Cliente(nome, CPF, dataNascimento, saldoInicial, email);
+        Conta conta1 = new Conta(saldoInicial, 12345, cliente);
+
+        System.out.println("");
+        System.out.println("//-- Aplicativo de Conta Bancária --//");
+
+        menu(conta1, scanner);
+
+        scanner.close();
     }
 }
