@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // Cria um objeto Scanner para leitura de entrada
 
         // Cadastro inicial do cliente
@@ -19,7 +19,7 @@ public class App {
         scanner.nextLine(); // Limpar a linha em branco
         System.out.print("Email: ");
         String email = scanner.nextLine();
-
+        
         // Cria um cliente com informações iniciais e uma conta bancária
         Cliente cliente = new Cliente(nome, CPF, dataNascimento, saldoInicial, email);
         Conta conta1 = new Conta(saldoInicial, 12345, cliente);
@@ -32,14 +32,15 @@ public class App {
         scanner.close();
     }
 
-    // Menu de Funcionamento da aplicação
+    // Funcionamento do menu
     public static void menu(Conta conta, Scanner scanner) {
         System.out.println("1. Informações do Cliente e da Conta");
         System.out.println("2. Depósito");
         System.out.println("3. Saque");
         System.out.println("4. Transferência");
         System.out.println("5. Histórico de transações");
-        System.out.println("6. Sair");
+        System.out.println("6. Notificações");
+        System.out.println("7. Sair do aplicativo");
 
         System.out.print("\nSelecione uma opção: ");
         int opcao = scanner.nextInt();
@@ -98,6 +99,20 @@ public class App {
                 break;
 
             case 6:
+                ArrayList<String> notificacoes = (ArrayList<String>) conta.getNotificacoes();
+                if (notificacoes.isEmpty()) {
+                    System.out.println("\nNenhuma notificação encontrada.\n");
+                } else {
+                    System.out.println("\nNotificações:");
+                    for (String notificacao : notificacoes) {
+                        System.out.println(notificacao);
+                    }
+                    System.out.println();
+                }
+                menu(conta, scanner);
+                break;
+
+            case 7:
                 System.out.println("\nValeu!");
                 scanner.close();
                 break;
