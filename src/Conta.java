@@ -59,4 +59,10 @@ public class Conta {
             System.out.println("\n");
         }
     }
+
+    // Método para exibir o saldo da conta
+    public void mostrarSaldo() {
+        System.out.println("Número da Conta: " + numeroConta + "\nSaldo: R$" + saldo);
+        System.out.println("\n");
+    }
 }
