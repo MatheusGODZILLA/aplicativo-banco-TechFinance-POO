@@ -25,7 +25,7 @@ public class Conta {
     // Método para realizar saques
     public void saque(double valor) {
         if (valor > saldo) {
-            System.out.println("Saldo insuficiente para o saque.");
+            System.out.println("Saldo insuficiente para o saque.\n");
             notificacoes.adicionarMensagem("Tentativa de saque de R$" + valor + " falhou devido a saldo insuficiente.");
         } else {
             saldo -= valor;
@@ -50,7 +50,7 @@ public class Conta {
     // Método para realizar transferências
     public void transferencia(Conta destino, double transferencia) {
         if (transferencia > saldo) {
-            System.out.println("Saldo insuficiente para a transferência.");
+            System.out.println("Saldo insuficiente para a transferência.\n");
             notificacoes.adicionarMensagem("Tentativa de transferência de R$" + transferencia + " falhou devido a saldo insuficiente.");
             System.out.println("\n");
         } else {
